@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "build-css": "tailwindcss build src/styles.css -o src/main.css"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
+    "tailwindcss": "^1.9.6",
     "typed.js": "^2.0.11"
   }
 }
