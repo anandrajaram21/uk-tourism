@@ -1,32 +1,32 @@
-<svelte:head>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
-</svelte:head>
+<script>
+	import Icon from './Icon.svelte';
+	import TailwindCss from './TailwindCss.svelte';
+</script>
+<TailwindCss/>
 
-<main>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-		<div class="container-fluid">
-		  <a class="navbar-brand" href="#">Uttarakhand Tourism</a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		  </button>
-		  <div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-			  <li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="#">Home</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="#">Features</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="#">Pricing</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-			  </li>
-			</ul>
-		  </div>
+<style>
+	a:hover {
+		text-decoration: none;
+	}
+
+	a {
+		color: white;
+	}
+</style>
+
+<body>
+	<header class="text-gray-500 bg-blue-500 body-font" id="top">
+		<div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+		  <a href="/" class="no-underline flex title-font font-medium items-center text-white mb-4 md:mb-0 atag">
+			<Icon/>
+			<span class="ml-3 text-2xl text-white">Uttarakhand Tourism</span>
+		  </a>
+		  <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
+			<a href="#hero" class="mr-5 text-2xl text-white hover:text-white">Home</a>
+			<a href="#places" class="mr-5 text-2xl text-white hover:text-white">Places to Visit</a>
+			<a href="#map" class="mr-5 text-2xl text-white hover:text-white">Map of Uttarakhand</a>
+			<a href="#faq" class="mr-5 text-2xl text-white hover:text-white">FAQ</a>
+		  </nav>
 		</div>
-	  </nav>
-</main>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-popRpmFF9JQgExhfw5tZT4I9/CI5e2QcuUZPOVXb1m7qUmeR2b50u+YFEYe1wgzy" crossorigin="anonymous"></script>
+	  </header>
+</body>
