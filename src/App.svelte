@@ -1,3 +1,9 @@
+<svelte:head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+	crossorigin=""/>
+</svelte:head>
+
 <script>
     import { onMount } from 'svelte';
 	import Icon from './Icon.svelte';
@@ -14,14 +20,14 @@
 
     onMount(() => {
 		// var typed = new Typed('.typing', options);
-		var mymap = L.map("map").setView([30.0668, 79.0193], 13);
+		var mymap = L.map("map").setView([29.3919, 79.4542], 13);
 		L.tileLayer(
 		"https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
 		{
 			attribution:
 			'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 			maxZoom: 18,
-			id: "mapbox/dark-v10",
+			id: "mapbox/streets-v11",
 			tileSize: 512,
 			zoomOffset: -1,
 			accessToken:
@@ -29,15 +35,16 @@
 		}
 		).addTo(mymap);
 
-		L.marker([29.3919, 79.4542]).addTo(mymap)
+		L.marker([30.3165, 78.0322]).addTo(mymap).bindPopup("Dehradun").openPopup();
+		L.marker([30.4598, 78.0644]).addTo(mymap).bindPopup("Mussoorie").openPopup();
+		L.marker([29.3919, 79.4542]).addTo(mymap).bindPopup("Nainital").openPopup();
+		L.marker([30.0869, 78.2676]).addTo(mymap).bindPopup("Rishikesh").openPopup();
+		L.marker([29.5300, 78.7747]).addTo(mymap).bindPopup("Jim Corbett National Park").openPopup();
+		L.marker([30.52892, 79.57026]).addTo(mymap).bindPopup("Auli").openPopup();
+		L.marker([30.2937, 79.5603]).addTo(mymap).bindPopup("Chamoli").openPopup();
+		L.marker([29.8377, 78.6871]).addTo(mymap).bindPopup("Lansdowne").openPopup();
     })
 </script>
-
-<svelte:head>
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-	crossorigin=""/>
-</svelte:head>
 
 <TailwindCss/>
 
@@ -67,7 +74,6 @@
 				<a href="#hero" class="mr-5 hover:text-white">Home</a>
 				<a href="#places" class="mr-5 hover:text-white">Places to Visit</a>
 				<a href="#map" class="mr-5 hover:text-white">Map of Uttarakhand</a>
-				<a href="#gallery" class="mr-5 hover:text-white">Gallery</a>
 				<a href="#faq" class="mr-5 hover:text-white">FAQ</a>
 			</nav>
         </div>
@@ -76,17 +82,16 @@
     <section id="hero" class="text-gray-500 bg-gray-900 body-font">
 		<div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
 		  <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-			<h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Before they sold out
-			  <br class="hidden lg:inline-block">readymade gluten
+			<h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Uttarakhand
+			  <br class="hidden lg:inline-block">The Land of Gods
 			</h1>
-			<p class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
-			<div class="flex justify-center">
-			  <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-			  <button class="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg">Button</button>
-			</div>
+			<p class="mb-8 leading-relaxed">
+				On the foothills of Himalayas, there is an enchanting land named Uttarakhand, which adds five stars to the beauty of Northern India.
+				Mysterious, beautiful, exotic, charming, and magnificent, that’s Uttarakhand in a nutshell. 
+			</p>
 		  </div>
 		  <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-			<img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600">
+			<img class="object-cover object-center rounded" alt="hero" src="https://images.indianexpress.com/2020/09/uttarakhand-1200.jpg">
 		  </div>
 		</div>
 	  </section>
@@ -95,163 +100,117 @@
 		<div class="container px-5 py-24 mx-auto">
 		  <div class="flex flex-wrap w-full mb-20">
 			<div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-			  <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">Pitchfork Kickstarter Taxidermy</h1>
+			  <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">Places to Visit</h1>
 			  <div class="h-1 w-20 bg-indigo-500 rounded"></div>
 			</div>
-			<p class="lg:w-1/2 w-full leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
+			<p class="lg:w-1/2 w-full leading-relaxed text-base">
+				They call it the ‘Land of Gods’. The enchanting land is blessed with some amazing tourist places and when you visit this place you can better judge why the Gods chose Uttrakhand to make it their abode. With several beautiful places to visit in Uttarakhand, a trip to Uttarakhand should definitely be in your bucket list of places to see in India. If you are already on your way to plan a trip, here is a list of places to visit in Uttarakhand.
+			</p>
 		  </div>
 		  <div class="flex flex-wrap -m-4">
 			<div class="xl:w-1/4 md:w-1/2 p-4">
 			  <div class="bg-gray-800 p-6 rounded-lg">
-				<img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/720x400" alt="content">
-				<h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-				<h2 class="text-lg text-white font-medium title-font mb-4">Chichen Itza</h2>
-				<p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+				<img class="h-40 rounded w-full object-cover object-center mb-6" src="https://uttarakhandtourism.gov.in/wp-content/uploads/2018/11/dehradun-2-300x200.jpg" alt="content">
+				<h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">BETWEEN MARCH AND JUNE</h3>
+				<h2 class="text-lg text-white font-medium title-font mb-4">Dehradun</h2>
+				<p class="leading-relaxed text-base">Shop for pretty woollens, handicrafts, handlooms, juices, jams, jellies and clothes in the local market. Don’t forget to try out the delicious Garhwali food at the local restaurants.</p>
 			  </div>
 			</div>
 			<div class="xl:w-1/4 md:w-1/2 p-4">
 			  <div class="bg-gray-800 p-6 rounded-lg">
-				<img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/721x401" alt="content">
-				<h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-				<h2 class="text-lg text-white font-medium title-font mb-4">Colosseum Roma</h2>
-				<p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+				<img class="h-40 rounded w-full object-cover object-center mb-6" src="https://uttarakhandtourism.gov.in/wp-content/uploads/2018/11/destination-mussoorie-300x200.jpg" alt="content">
+				<h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">BETWEEN APRIL AND JUNE</h3>
+				<h2 class="text-lg text-white font-medium title-font mb-4">Mussoorie</h2>
+				<p class="leading-relaxed text-base">Walk through the winding lanes of the tiny town and explore its beauty. Also, try your luck in spotting resident author Ruskin Bond, who enjoys a stroll through the markets.</p>
 			  </div>
 			</div>
 			<div class="xl:w-1/4 md:w-1/2 p-4">
 			  <div class="bg-gray-800 p-6 rounded-lg">
-				<img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/722x402" alt="content">
-				<h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-				<h2 class="text-lg text-white font-medium title-font mb-4">Great Pyramid of Giza</h2>
-				<p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+				<img class="h-40 rounded w-full object-cover object-center mb-6" src="https://uttarakhandtourism.gov.in/wp-content/uploads/2018/11/nainital-2-300x200.jpg" alt="content">
+				<h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">BETWEEN MARCH AND JUNE</h3>
+				<h2 class="text-lg text-white font-medium title-font mb-4">Nainital</h2>
+				<p class="leading-relaxed text-base">Shop for woollens, handicrafts, jewellery and soveniour in the shops on Mall Road. If you love adventure, then there are options for trekking.</p>
 			  </div>
 			</div>
 			<div class="xl:w-1/4 md:w-1/2 p-4">
 			  <div class="bg-gray-800 p-6 rounded-lg">
-				<img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/723x403" alt="content">
-				<h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-				<h2 class="text-lg text-white font-medium title-font mb-4">San Francisco</h2>
-				<p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+				<img class="h-40 rounded w-full object-cover object-center mb-6" src="https://uttarakhandtourism.gov.in/wp-content/uploads/2018/11/destination-rishikesh-300x200.jpg" alt="content">
+				<h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">BETWEEN AUGUST AND OCTOBER</h3>
+				<h2 class="text-lg text-white font-medium title-font mb-4">Rishikesh</h2>
+				<p class="leading-relaxed text-base">A thrilling white water rafting in Rishikesh is an experience of a lifetime. Looking for a divine experience? Take a dip in the holy Ganga and feel spiritually cleansed.</p>
 			  </div>
 			</div>
+			<div class="xl:w-1/4 md:w-1/2 p-4">
+				<div class="bg-gray-800 p-6 rounded-lg">
+				  <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://uttarakhandtourism.gov.in/wp-content/uploads/2018/11/destination-corbett-300x200.jpg" alt="content">
+				  <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">DEPENDS ON YOUR INTERESTS</h3>
+				  <h2 class="text-lg text-white font-medium title-font mb-4">Jim Corbett National Park</h2>
+				  <p class="leading-relaxed text-base">Jim Corbett National Park is a forested wildlife sanctuary in northern India’s Uttarakhand State. Rich in flora and fauna, it’s known for its Bengal tigers. Animals, including tigers, leopards and wild elephants, roam the Dhikala zone.</p>
+				</div>
+			  </div>
+			  <div class="xl:w-1/4 md:w-1/2 p-4">
+				<div class="bg-gray-800 p-6 rounded-lg">
+				  <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://uttarakhandtourism.gov.in/wp-content/uploads/2018/11/auli-300x200.jpeg" alt="content">
+				  <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">ANYTIME OF THE YEAR</h3>
+				  <h2 class="text-lg text-white font-medium title-font mb-4">Auli</h2>
+				  <p class="leading-relaxed text-base">Auli is the skiing and snowboarding hub of India. You can try your hand at skiing here. There are different courses to learn the sport. Try your lick at mountaineering here and you will have an unforgettable experience. Winters can be extremely cold and you will need to bundle up.</p>
+				</div>
+			  </div>
+			  <div class="xl:w-1/4 md:w-1/2 p-4">
+				<div class="bg-gray-800 p-6 rounded-lg">
+				  <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://uttarakhandtourism.gov.in/wp-content/uploads/2018/11/chamoli-1-300x200.jpg" alt="content">
+				  <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">BETWEEN OCTOBER AND MARCH</h3>
+				  <h2 class="text-lg text-white font-medium title-font mb-4">Chamoli</h2>
+				  <p class="leading-relaxed text-base">Enjoy the cable car ride here. The ride is very scenic and enjoyable. Trekking is another option to indulge in this wonderful town.</p>
+				</div>
+			  </div>
+			  <div class="xl:w-1/4 md:w-1/2 p-4">
+				<div class="bg-gray-800 p-6 rounded-lg">
+				  <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://uttarakhandtourism.gov.in/wp-content/uploads/2018/12/destination-lansdown-300x200.jpg" alt="content">
+				  <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">BETWEEN JULY AND SEPTEMBER</h3>
+				  <h2 class="text-lg text-white font-medium title-font mb-4">Lansdowne</h2>
+				  <p class="leading-relaxed text-base">Enjoy a peaceful walk or simply sit and stare at the beauty of nature. You can also go on the forest trail to explore the wilderness of this beautiful place.</p>
+				</div>
+			  </div>
 		  </div>
 		</div>
 	  </section>
-	  <!-- Map Section -->
-	  <!-- <section class="text-gray-500 bg-gray-900 body-font relative">
-		<div class="container px-5 py-24 mx-auto flex sm:flex-no-wrap flex-wrap">
-		  <div class="lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
-			<iframe title="map" class="absolute inset-0" style="filter: grayscale(1) contrast(1.2) opacity(0.16);" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=%C4%B0zmir+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" width="100%" height="100%" frameborder="0"></iframe>
-			<div class="bg-gray-900 relative flex flex-wrap py-6">
-			  <div class="lg:w-1/2 px-6">
-				<h2 class="title-font font-medium text-white tracking-widest text-sm">ADDRESS</h2>
-				<p class="leading-relaxed">Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter</p>
-			  </div>
-			  <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
-				<h2 class="title-font font-medium text-white tracking-widest text-sm">EMAIL</h2>
-				<a class="text-indigo-500 leading-relaxed">example@email.com</a>
-				<h2 class="title-font font-medium text-white tracking-widest text-sm mt-4">PHONE</h2>
-				<p class="leading-relaxed">123-456-7890</p>
-			  </div>
-			</div>
-		  </div>
-		  <div class="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
-			<h2 class="text-white text-lg mb-1 font-medium title-font">Feedback</h2>
-			<p class="leading-relaxed mb-5 text-gray-600">Post-ironic portland shabby chic echo park, banjo fashion axe</p>
-			<div class="relative mb-4">
-			  <label for="name" class="leading-7 text-sm text-gray-400">Name</label>
-			  <input type="text" id="name" name="name" class="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-			</div>
-			<div class="relative mb-4">
-			  <label for="email" class="leading-7 text-sm text-gray-400">Email</label>
-			  <input type="email" id="email" name="email" class="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-			</div>
-			<div class="relative mb-4">
-			  <label for="message" class="leading-7 text-sm text-gray-400">Message</label>
-			  <textarea id="message" name="message" class="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
-			</div>
-			<button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-			<p class="text-xs text-gray-500 mt-3">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p>
-		  </div>
-		</div>
-	  </section> -->
-	  <div id="map">
-
-	  </div>
-	  <!-- Gallery -->
-	  <section id="gallery" class="text-gray-500 bg-gray-900 body-font">
-		<div class="container px-5 py-24 mx-auto flex flex-wrap">
-		  <div class="flex w-full mb-20 flex-wrap">
-			<h1 class="sm:text-3xl text-2xl font-medium title-font text-white lg:w-1/3 lg:mb-0 mb-4">Master Cleanse Reliac Heirloom</h1>
-			<p class="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</p>
-		  </div>
-		  <div class="flex flex-wrap md:-m-2 -m-1">
-			<div class="flex flex-wrap w-1/2">
-			  <div class="md:p-2 p-1 w-1/2">
-				<img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/500x300">
-			  </div>
-			  <div class="md:p-2 p-1 w-1/2">
-				<img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/501x301">
-			  </div>
-			  <div class="md:p-2 p-1 w-full">
-				<img alt="gallery" class="w-full h-full object-cover object-center block" src="https://dummyimage.com/600x360">
-			  </div>
-			</div>
-			<div class="flex flex-wrap w-1/2">
-			  <div class="md:p-2 p-1 w-full">
-				<img alt="gallery" class="w-full h-full object-cover object-center block" src="https://dummyimage.com/601x361">
-			  </div>
-			  <div class="md:p-2 p-1 w-1/2">
-				<img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/502x302">
-			  </div>
-			  <div class="md:p-2 p-1 w-1/2">
-				<img alt="gallery" class="w-full object-cover h-full object-center block" src="https://dummyimage.com/503x303">
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </section>
+	  <section id="map"></section>
 	  <!-- FAQ Section -->
 	  <section id="faq" class="text-gray-500 bg-gray-900 body-font overflow-hidden">
 		<div class="container px-5 py-24 mx-auto">
 		  <div class="-my-8">
 			<div class="py-8 flex flex-wrap md:flex-no-wrap">
 			  <div class="md:flex-grow">
-				<h2 class="text-2xl font-medium text-white title-font mb-2">Bitters hashtag waistcoat fashion axe chia unicorn</h2>
-				<p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft beer.</p>
-				<a class="text-indigo-500 inline-flex items-center mt-4">Learn More
-				  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M5 12h14"></path>
-					<path d="M12 5l7 7-7 7"></path>
-				  </svg>
-				</a>
+				<h2 class="text-2xl font-medium text-white title-font mb-2">1. What adventure activities are there in Uttarakhand?</h2>
+				<p class="leading-relaxed">Uttarakhand is a gold mine of adventure activities. From varying intensity treks, skiing, and paragliding to white water rafting and camping, there are enough activities for the adventure junkie in you to explore and experience.</p>
 			  </div>
 			</div>
 			<div class="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-no-wrap">
 			  <div class="md:flex-grow">
-				<h2 class="text-2xl font-medium text-white title-font mb-2">Meditation bushwick direct trade taxidermy shaman</h2>
-				<p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft beer.</p>
-				<a class="text-indigo-500 inline-flex items-center mt-4">Learn More
-				  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M5 12h14"></path>
-					<path d="M12 5l7 7-7 7"></path>
-				  </svg>
-				</a>
+				<h2 class="text-2xl font-medium text-white title-font mb-2">2. What is the best time to visit Uttarakhand?</h2>
+				<p class="leading-relaxed">You can visit Uttarakhand all year long and the experience will be thrilling. However, summertime from March through June and winter days from October to February is supposed to be the best time to visit. The weather is pleasant and is sure to give you the most amazing vacation feels.</p>
 			  </div>
 			</div>
 			<div class="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-no-wrap">
 			  <div class="md:flex-grow">
-				<h2 class="text-2xl font-medium text-white title-font mb-2">Woke master cleanse drinking vinegar salvia</h2>
-				<p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft beer.</p>
-				<a class="text-indigo-500 inline-flex items-center mt-4">Learn More
-				  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M5 12h14"></path>
-					<path d="M12 5l7 7-7 7"></path>
-				  </svg>
-				</a>
+				<h2 class="text-2xl font-medium text-white title-font mb-2">3. What can I expect while visiting Uttarakhand?</h2>
+				<p class="leading-relaxed">Traveling to Uttarakhand, you can expect to feel the spiritual powers of the mountains reverberating as you drive down the treacherous roads or trek the mighty mountains. The scenic beauty is overwhelming and feels as close to paradise as it can get. You can surely expect to feel rejuvenated and replenished after a visit to this glorious place.</p>
 			  </div>
 			</div>
 		  </div>
 		</div>
 	  </section>
+	  <!-- The Footer Section -->
+	  <footer class="text-gray-500 bg-gray-900 body-font">
+		<div class="container px-5 py-8 mx-auto flex justify-center items-center sm:flex-row flex-col">
+		  <a href="#hero" class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+			<Icon/>
+			<span class="ml-3 text-xl">UK Tourism</span>
+		  </a>
+		  <p class="text-lg text-gray-600 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">© 2020 UK Tourism
+		  </p>
+		</div>
+	  </footer>
 </body>
 
