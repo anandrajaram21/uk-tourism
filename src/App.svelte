@@ -35,14 +35,14 @@
 		}
 		).addTo(mymap);
 
-		L.marker([30.3165, 78.0322]).addTo(mymap).bindPopup("Dehradun").openPopup();
-		L.marker([30.4598, 78.0644]).addTo(mymap).bindPopup("Mussoorie").openPopup();
-		L.marker([29.3919, 79.4542]).addTo(mymap).bindPopup("Nainital").openPopup();
-		L.marker([30.0869, 78.2676]).addTo(mymap).bindPopup("Rishikesh").openPopup();
-		L.marker([29.5300, 78.7747]).addTo(mymap).bindPopup("Jim Corbett National Park").openPopup();
-		L.marker([30.52892, 79.57026]).addTo(mymap).bindPopup("Auli").openPopup();
-		L.marker([30.2937, 79.5603]).addTo(mymap).bindPopup("Chamoli").openPopup();
-		L.marker([29.8377, 78.6871]).addTo(mymap).bindPopup("Lansdowne").openPopup();
+		// L.marker([30.3165, 78.0322]).addTo(mymap).bindPopup("Dehradun").openPopup();
+		// L.marker([30.4598, 78.0644]).addTo(mymap).bindPopup("Mussoorie").openPopup();
+		// L.marker([29.3919, 79.4542]).addTo(mymap).bindPopup("Nainital").openPopup();
+		// L.marker([30.0869, 78.2676]).addTo(mymap).bindPopup("Rishikesh").openPopup();
+		// L.marker([29.5300, 78.7747]).addTo(mymap).bindPopup("Jim Corbett National Park").openPopup();
+		// L.marker([30.52892, 79.57026]).addTo(mymap).bindPopup("Auli").openPopup();
+		// L.marker([30.2937, 79.5603]).addTo(mymap).bindPopup("Chamoli").openPopup();
+		// L.marker([29.8377, 78.6871]).addTo(mymap).bindPopup("Lansdowne").openPopup();
     })
 </script>
 
